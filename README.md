@@ -1,10 +1,10 @@
 # FocalLoss
 
-Focal Loss는 학습 중 클래스 불균형(class imbalance) 문제를 해결하기 위해 RetinaNet 논문(https://arxiv.org/pdf/1708.02002.pdf) 에서 소개되었습니다.
+Focal Loss는 학습 중 클래스 불균형(Class Imbalance) 문제를 해결하기 위해 RetinaNet 논문(https://arxiv.org/pdf/1708.02002.pdf) 에서 소개되었습니다.
 
 클래스 불균형 문제는 다음 2가지 문제의 원인이 됩니다.
 
-+ 대부분의 Location은 학습에 기여하지 않는 Easy negative이므로 (Detector에 의해 Background로 쉽게 분류될 수 있음을 의미함) 학습에 비효율적입니다.
++ 대부분의 Location은 학습에 기여하지 않는 Easy ㅜegative이므로 (Detector에 의해 Background로 쉽게 분류될 수 있음을 의미함) 학습에 비효율적입니다.
 
 + Easy negative 각각은 높은 확률로 객체가 아님을 잘 구분할 수 있습니다. 즉, 각각의 ㅣoss 값은 작습니다. 하지만 비율이 굉장히 크므로 전체 Loss 및 Gradient를 계산할 때, Easy Negative의 영향이 압도적으로 커지는 문제가 발생합니다.
 
