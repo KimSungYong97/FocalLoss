@@ -4,11 +4,11 @@ Focal Loss는 학습 중 클래스 불균형(Class Imbalance) 문제를 해결�
 
 클래스 불균형 문제는 다음 2가지 문제의 원인이 됩니다.
 
-+ 대부분의 Location은 학습에 기여하지 않는 Easy ㅜegative이므로 (Detector에 의해 Background로 쉽게 분류될 수 있음을 의미함) 학습에 비효율적입니다.
++ 대부분의 Location은 학습에 기여하지 않는 Background와 같은 Easy Negative이므로 (Detector에 의해 Background로 쉽게 분류될 수 있음을 의미함) 학습에 비효율적입니다.
 
-+ Easy negative 각각은 높은 확률로 객체가 아님을 잘 구분할 수 있습니다. 즉, 각각의 ㅣoss 값은 작습니다. 하지만 비율이 굉장히 크므로 전체 Loss 및 Gradient를 계산할 때, Easy Negative의 영향이 압도적으로 커지는 문제가 발생합니다.
++ Easy negative 각각은 높은 확률로 Object가 아님을 잘 구분할 수 있습니다. 즉, 각각의 Loss 값은 작습니다. 하지만 전체 비중이 굉장히 크므로 전체 Loss 및 Gradient를 계산할 때, Easy Negative의 영향이 압도적으로 커지는 문제가 발생합니다.
 
-이 문제들을 해결하기 위해 FocalLoss가 나오게 되는데, Focal Loss는 간단히 말하면 Cross Entropy의 클래스 불균형 문제를 다루기 위한 개선된 버전이라고 말할 수 있으며 어렵거나 쉽게 오분류되는 케이스에 대하여 더 큰 가중치를 주는 방법을 사용합니다. (객체 일부분만 있거나, 실제 분류해야 되는 객체들이 이에 해당합니다.) 
+이 문제들을 해결하기 위해 FocalLoss가 나오게 되는데, Focal Loss는 간단히 말하면 Cross Entropy의 클래스 불균형 문제를 다루기 위한 개선된 버전이라고 말할 수 있으며 어렵거나 쉽게 오분류되는 케이스에 대하여 더 큰 가중치를 주는 방법을 사용합니다. (Object 일부분만 있거나, 실제 분류해야 되는 Object들이 이에 해당합니다.) 
 
 반대로 쉬운 케이스의 경우 낮은 가중치를 반영합니다. (Background Object가 이에 해당합니다.)
 
