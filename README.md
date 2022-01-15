@@ -21,7 +21,7 @@ Focal Loss는 학습 중 클래스 불균형(Class Imbalance) 문제를 해결�
 
 똑같이 loss값이 작아지긴 했지만 Easy Case의 Loss값이 Hard Case의 Loss값에 비해 큰 폭으로 작아졌음을 볼 수 있습니다.
 
-이러한 원리로 이미지의 대부분에 해당되는 Easy Negative (Bakground)의 학습을 줄임으로써 효율적인 학습이 가능해집니다.
+이러한 원리로 이미지의 대부분에 해당되는 Easy Negative (Background)의 학습을 줄임으로써 효율적인 학습이 가능해집니다.
 
 
 ### Usage
